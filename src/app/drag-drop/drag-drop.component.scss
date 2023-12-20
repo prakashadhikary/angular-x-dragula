@@ -1,0 +1,15 @@
+.list-wrapper {
+    display: table;
+}
+
+.container {
+    width: 50%;
+    display: table-cell;
+    background-color: rgba(0, 0, 0, 0.1);
+
+    div {
+        padding: 10px;
+        margin: 10px;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}
