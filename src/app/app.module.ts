@@ -5,18 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DragDropComponent } from './drag-drop/drag-drop.component';
 import { DragulaModule } from 'ng2-dragula';
+import { DisplayGroupComponent } from './display-group/display-group.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    DragDropComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    DragulaModule,
-  ],
+  declarations: [AppComponent, DragDropComponent, DisplayGroupComponent],
+  imports: [BrowserModule, AppRoutingModule, DragulaModule.forRoot()],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

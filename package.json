@@ -18,7 +18,6 @@
     "@angular/platform-browser": "^16.2.12",
     "@angular/platform-browser-dynamic": "^16.2.12",
     "@angular/router": "^16.2.12",
-    "dragula": "^3.7.3",
     "ng2-dragula": "^5.0.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

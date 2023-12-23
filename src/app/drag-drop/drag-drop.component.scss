@@ -1,15 +1,56 @@
 .list-wrapper {
-    display: table;
+  display: table;
 }
 
 .container {
-    width: 50%;
-    display: table-cell;
-    background-color: rgba(0, 0, 0, 0.1);
+  width: 50%;
+  display: table-cell;
+  background-color: rgba(0, 0, 0, 0.1);
 
-    div {
-        padding: 10px;
-        margin: 10px;
-        background-color: rgba(0, 0, 0, 0.2);
-    }
+  div {
+    padding: 10px;
+    margin: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
 }
+
+.row {
+  display: flex;
+}
+
+.column {
+  padding: 10px;
+  border: 1px solid #ddd;
+  height: 500px;
+  min-width: calc(50% - 22px);
+}
+
+.column-1 {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  min-width: 25%;
+}
+
+.columns-wrapper {
+  display: flex;
+  margin-left: -1px; /* Compensate for border of the first column */
+  overflow-x: auto;
+}
+
+/* Style the scrollbar for WebKit browsers (Chrome, Safari) */
+.columns-wrapper::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  .columns-wrapper::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+  
+  /* Style the scrollbar for Firefox */
+  .columns-wrapper {
+    scrollbar-width: thin;
+    scrollbar-color: #888 transparent;
+  }
+/* Adjust styling as needed */

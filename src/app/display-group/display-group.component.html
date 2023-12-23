@@ -1,0 +1,12 @@
+<ng-container *ngFor="let item of dataWithSubGroup">
+  <h3>
+    {{ item.label }}
+    <ng-container
+      *ngIf="item.subGroup && item.subGroup.length > 0; else emptyList"
+    >
+      <app-display-group [dataWithSubGroup]="item.subGroup"></app-display-group>
+    </ng-container>
+  </h3>
+</ng-container>
+
+<ng-template #emptyList><p>Empty List</p></ng-template>

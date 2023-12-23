@@ -21,33 +21,41 @@ export class AppComponent {
 
   dataWithSubGroup: any = [
     {
-      id: 'active',
+      id: 'group_1',
       label: 'Active',
       subGroup: [
         {
-          id: 'buybux_less',
+          id: 'group_1_1',
           label: 'Buybox Less Than',
           subGroup: [
             {
-              id: 'buybux_less',
+              id: 'group_1_1_1',
               label: 'Buybox Less Than',
               subGroup: [
-                { id: 'buybux_less', label: 'Buybox Less Than' },
-                { id: 'buybux_greater', label: 'Buybux Greater Than' },
+                {
+                  id: 'group_1_1_1_1',
+                  label: 'Buybox Less Than',
+                  subGroup: [],
+                },
+                {
+                  id: 'group_1_1_1_2',
+                  label: 'Buybux Greater Than',
+                  subGroup: [],
+                },
               ],
             },
-            { id: 'buybux_greater', label: 'Buybux Greater Than' },
+            { id: 'group_1_1_2', label: 'Buybux Greater Than', subGroup: [] },
           ],
         },
-        { id: 'buybux_greater', label: 'Buybux Greater Than' },
+        { id: 'group_1_2', label: 'Buybux Greater Than', subGroup: [] },
       ],
     },
     {
       label: 'Inactive',
-      id: 'inactive',
+      id: 'group_2',
       subGroup: [
-        { id: 'buybux_less', label: 'Buybox Less Than' },
-        { id: 'buybux_greater', label: 'Buybux Greater Than' },
+        { id: 'group_2_1', label: 'Buybox Less Than', subGroup: [] },
+        { id: 'group_2_2', label: 'Buybux Greater Than', subGroup: [] },
       ],
     },
   ];
@@ -61,6 +69,10 @@ export class AppComponent {
         group.subGroup.forEach((sg: any) => {
           const machineId = `${group.id}_${sg.id}`;
           this.normalizedGroup[machineId] = [];
+
+          if (sg.hasOwnProperty('subGroup') && sg.subGroup.length) {
+            this.normalizeSubGroups(group.id, sg.subGroup);
+          }
         });
       } else {
         this.normalizedGroup[group.id] = [];
@@ -68,5 +80,16 @@ export class AppComponent {
     });
 
     console.log(this.normalizedGroup);
+  }
+
+  normalizeSubGroups(parentId: any, subGroups: any) {
+    subGroups.forEach((subGroup: any) => {
+      const machineId = `${parentId}_${subGroup.id}`;
+      this.normalizedGroup[machineId] = [];
+
+      if (subGroup.hasOwnProperty('subGroup') && subGroup.subGroup.length) {
+        this.normalizeSubGroups(machineId, subGroup.subGroup);
+      }
+    });
   }
 }

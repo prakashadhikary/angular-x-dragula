@@ -1,66 +1,27 @@
 <div class="list-wrapper">
-  <div id="left" class="container">
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, nesciunt
-      doloremque? Aperiam fuga ipsam sed quae, adipisci impedit consequatur
-      dolorem incidunt tenetur ea esse laboriosam rerum voluptatibus, voluptas
-      deleniti. Saepe.
-    </div>
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, nesciunt
-      doloremque? Aperiam fuga ipsam sed quae, adipisci impedit consequatur
-      dolorem incidunt tenetur ea esse laboriosam rerum voluptatibus, voluptas
-      deleniti. Saepe.
-    </div>
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, nesciunt
-      doloremque? Aperiam fuga ipsam sed quae, adipisci impedit consequatur
-      dolorem incidunt tenetur ea esse laboriosam rerum voluptatibus, voluptas
-      deleniti. Saepe.
-    </div>
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, nesciunt
-      doloremque? Aperiam fuga ipsam sed quae, adipisci impedit consequatur
-      dolorem incidunt tenetur ea esse laboriosam rerum voluptatibus, voluptas
-      deleniti. Saepe.
-    </div>
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, nesciunt
-      doloremque? Aperiam fuga ipsam sed quae, adipisci impedit consequatur
-      dolorem incidunt tenetur ea esse laboriosam rerum voluptatibus, voluptas
-      deleniti. Saepe.
+  <div id="left" class="container" dragula="VAMPIRES" [(dragulaModel)]="leftList">
+    <div *ngFor="let item of leftList">
+      {{ item }}
     </div>
   </div>
-  <div id="right" class="container">
-    <div>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur,
-      incidunt nulla deleniti, harum exercitationem temporibus tempora provident
-      qui accusantium, sed vero! Natus dolorum quia facere ut deserunt animi,
-      tempora fugiat!
+  <div id="right" class="container" dragula="VAMPIRES" [(dragulaModel)]="rightList">
+    <div *ngFor="let item of rightList">
+      {{ item }}
     </div>
-    <div>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur,
-      incidunt nulla deleniti, harum exercitationem temporibus tempora provident
-      qui accusantium, sed vero! Natus dolorum quia facere ut deserunt animi,
-      tempora fugiat!
-    </div>
-    <div>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur,
-      incidunt nulla deleniti, harum exercitationem temporibus tempora provident
-      qui accusantium, sed vero! Natus dolorum quia facere ut deserunt animi,
-      tempora fugiat!
-    </div>
-    <div>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur,
-      incidunt nulla deleniti, harum exercitationem temporibus tempora provident
-      qui accusantium, sed vero! Natus dolorum quia facere ut deserunt animi,
-      tempora fugiat!
-    </div>
-    <div>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur,
-      incidunt nulla deleniti, harum exercitationem temporibus tempora provident
-      qui accusantium, sed vero! Natus dolorum quia facere ut deserunt animi,
-      tempora fugiat!
+  </div>
+</div>
+
+
+<div class="table-container">
+  <div class="row">
+    <div class="column column-1">Column 1</div>
+    <div class="columns-wrapper">
+      <div class="column column-2">Column 2</div>
+      <div class="column column-3">Column 3</div>
+      <div class="column column-4">Column 4</div>
+      <div class="column column-5">Column 5</div>
+      <div class="column column-6">Column 6</div>
+      <div class="column column-7">Column 7</div>
     </div>
   </div>
 </div>
